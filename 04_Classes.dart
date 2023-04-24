@@ -1,4 +1,4 @@
-class Spacecarft{
+/*class Spacecarft{
   String name;
   DateTime? launchDate;
   //Read-only non-final property
@@ -28,3 +28,4 @@ voyager.describe();
 
 var voyager3 = Spacecraft.unlaunched('Voyager III');
 voyager3.describe();
+*/

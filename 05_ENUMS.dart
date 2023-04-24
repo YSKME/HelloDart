@@ -1,4 +1,4 @@
-enum PlaneType{
+/*enum PlaneType{
 terrestrial,gas,ice
 }
 
@@ -24,3 +24,4 @@ final your Planet=Planet.earth;
 if(!yourPLanet.isGiant){
   print('Your planet is not a "giant planet".');
 }
+*/
