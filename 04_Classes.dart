@@ -1,12 +1,15 @@
-/*class Spacecarft{
+class Spacecraft {
   String name;
   DateTime? launchDate;
-  //Read-only non-final property
-  int? get launchYear =>launchDate?.year;
-  //Constructor, with syntactic sugar for assignment to members.
-  Spacecraft(this.name,this.launchDate){
-    //Initialization code goes here.
+
+  // Read-only non-final property
+  int? get launchYear => launchDate?.year;
+
+  // Constructor, with syntactic sugar for assignment to members.
+  Spacecraft(this.name, this.launchDate) {
+    // Initialization code goes here.
   }
+
   // Named constructor that forwards to the default one.
   Spacecraft.unlaunched(String name) : this(name, null);
 
@@ -23,9 +26,3 @@
     }
   }
 }
-var voyager = Spacecraft('Voyager I', DateTime(1977, 9, 5));
-voyager.describe();
-
-var voyager3 = Spacecraft.unlaunched('Voyager III');
-voyager3.describe();
-*/
