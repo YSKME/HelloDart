@@ -1,3 +1,4 @@
+/*
 void main()
 {
     var name='Voyager I';
@@ -11,3 +12,4 @@ void main()
     //额外测试
     var test=['hello',123,'world',456];
 }
+*/

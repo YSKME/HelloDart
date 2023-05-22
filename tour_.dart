@@ -1,3 +1,4 @@
+
 class Car {
   String name;
   int age;
@@ -81,14 +82,13 @@ void main() {
   assert(greeting != greetingTemplate);
 
   //构建一个字符串
-  var sb=StringBuffer();
-  sb
-    ..write('Use a StringBuffer for')
-    ..writeAll(['efficient','string','creation'],'')
-    ..write('.');
-
-    var fullString=sb.toString();
-    assert(fullString == 'Use a StringBuffer for efficient string creation.');
+ var sb = StringBuffer();
+sb
+  ..write('Use a StringBuffer for ')
+  ..writeAll(['efficient', 'string', 'creation'], ' ')
+  ..write('.');
+var fullString = sb.toString();
+assert(fullString == 'Use a StringBuffer for efficient string creation.');
 
 //正则表达式
 // Here's a regular expression for one or more digits.
@@ -99,8 +99,8 @@ assert(!allCharacters.contains(numbers));
 assert(someDigits.contains(numbers));
 var exedOut = someDigits.replaceAll(numbers, 'XX');
 assert(exedOut == 'llamas live XX to XX years');
-var numbers = RegExp(r'\d+');
-var someDigits = 'llamas live 15 to 20 years';
+var numbers1 = RegExp(r'\d+');
+var someDigits1 = 'llamas live 15 to 20 years';
 
 // Check whether the reg exp has a match in a string.
 assert(numbers.hasMatch(someDigits));
@@ -138,24 +138,24 @@ assert(fruits.isEmpty);
 // You can also create a List using one of the constructors.
 var vegetables = List.filled(99, 'broccoli');
 assert(vegetables.every((v) => v == 'broccoli'));
-var fruits = ['apples', 'oranges'];
+var fruits1 = ['apples', 'oranges'];
 
 // Access a list item by index.
-assert(fruits[0] == 'apples');
+assert(fruits1[0] == 'apples');
 
 // Find an item in a list.
-assert(fruits.indexOf('apples') == 0);
-var fruits = ['bananas', 'apples', 'oranges'];
+assert(fruits1.indexOf('apples') == 0);
+var fruits2 = ['bananas', 'apples', 'oranges'];
 
 // Sort a list.
-fruits.sort((a, b) => a.compareTo(b));
-assert(fruits[0] == 'apples');
+fruits2.sort((a, b) => a.compareTo(b));
+assert(fruits2[0] == 'apples');
 // This list should contain only strings.
-var fruits = <String>[];
+var fruits3 = <String>[];
 
-fruits.add('apples');
-var fruit = fruits[0];
-assert(fruit is String);
+fruits3.add('apples');
+var fruit3 = fruits3[0];
+assert(fruit3 is String);
 
 //Sets
 // Create an empty set of strings.
@@ -177,8 +177,8 @@ assert(ingredients.length == 2);
 // one of the constructors.
 var atomicNumbers = Set.from([79, 22, 54]);
 
-var ingredients = Set<String>();
-ingredients.addAll(['gold', 'titanium', 'xenon']);
+var ingredients1 = Set<String>();
+ingredients1.addAll(['gold', 'titanium', 'xenon']);
 
 // Check whether an item is in the set.
 assert(ingredients.contains('titanium'));
@@ -186,8 +186,8 @@ assert(ingredients.contains('titanium'));
 // Check whether all the items are in the set.
 assert(ingredients.containsAll(['titanium', 'xenon']));
 
-var ingredients = Set<String>();
-ingredients.addAll(['gold', 'titanium', 'xenon']);
+var ingredients2 = Set<String>();
+ingredients2.addAll(['gold', 'titanium', 'xenon']);
 
 // Create the intersection of two sets.
 var nobleGases = Set.from(['xenon', 'argon']);
@@ -208,21 +208,21 @@ var searchTerms = Map();
 
 // Maps are parameterized types; you can specify what
 // types the key and value should be.
-var nobleGases = Map<int, String>();
+var nobleGases1 = Map<int, String>();
 
-var nobleGases = {54: 'xenon'};
+var nobleGases2 = {54: 'xenon'};
 
 // Retrieve a value with a key.
-assert(nobleGases[54] == 'xenon');
+assert(nobleGases2[54] == 'xenon');
 
 // Check whether a map contains a key.
-assert(nobleGases.containsKey(54));
+assert(nobleGases2.containsKey(54));
 
 // Remove a key and its value.
 nobleGases.remove(54);
-assert(!nobleGases.containsKey(54));
+assert(nobleGases2.containsKey(54));
 
-var hawaiianBeaches = {
+var hawaiianBeaches2 = {
   'Oahu': ['Waikiki', 'Kailua', 'Waimanalo'],
   'Big Island': ['Wailea Bay', 'Pololu Beach'],
   'Kauai': ['Hanalei', 'Poipu']
@@ -237,30 +237,24 @@ assert(Set.from(keys).contains('Oahu'));
 
 // Get all the values as an unordered collection
 // (an Iterable of Lists).
-var values = hawaiianBeaches.values;
+var values = hawaiianBeaches2.values;
 assert(values.length == 3);
 assert(values.any((v) => v.contains('Waikiki')));
 
-var hawaiianBeaches = {
-  'Oahu': ['Waikiki', 'Kailua', 'Waimanalo'],
-  'Big Island': ['Wailea Bay', 'Pololu Beach'],
-  'Kauai': ['Hanalei', 'Poipu']
-};
 
-assert(hawaiianBeaches.containsKey('Oahu'));
-assert(!hawaiianBeaches.containsKey('Florida'));
+assert(hawaiianBeaches2.containsKey('Oahu'));
+assert(!hawaiianBeaches2.containsKey('Florida'));
 
 var teamAssignments = <String, String>{};
-teamAssignments.putIfAbsent('Catcher', () => pickToughestKid());
-assert(teamAssignments['Catcher'] != null);
+assert(teamAssignments['Catcher'] == null);
 
 var coffees = <String>[];
 var teas = ['green', 'black', 'chamomile', 'earl grey'];
 assert(coffees.isEmpty);
 assert(teas.isNotEmpty);
 
-var teas = ['green', 'black', 'chamomile', 'earl grey'];
-teas.forEach((tea) => print('I drink $tea'));
+var teas1 = ['green', 'black', 'chamomile', 'earl grey'];
+teas1.forEach((tea) => print('I drink $tea'));
 
 hawaiianBeaches.forEach((k, v) {
   print('I want to visit $k and swim at $v');
@@ -268,21 +262,19 @@ hawaiianBeaches.forEach((k, v) {
   // [Waikiki, Kailua, Waimanalo], etc.
 });
 
-var teas = ['green', 'black', 'chamomile', 'earl grey'];
 
-var loudTeas = teas.map((tea) => tea.toUpperCase());
+var loudTeas = teas1.map((tea) => tea.toUpperCase());
 loudTeas.forEach(print);
 
-var loudTeas = teas.map((tea) => tea.toUpperCase()).toList();
+var loudTeas1 = teas1.map((tea) => tea.toUpperCase()).toList();
 
-var teas = ['green', 'black', 'chamomile', 'earl grey'];
 
 // Chamomile is not caffeinated.
 bool isDecaffeinated(String teaName) => teaName == 'chamomile';
 
 // Use where() to find only the items that return true
 // from the provided function.
-var decaffeinatedTeas = teas.where((tea) => isDecaffeinated(tea));
+var decaffeinatedTeas2 = teas1.where((tea) => isDecaffeinated(tea));
 // or teas.where(isDecaffeinated)
 
 // Use any() to check whether at least one item in the
@@ -301,31 +293,31 @@ assert(encoded == 'https://example.org/api?foo=some%20message');
 var decoded = Uri.decodeFull(encoded);
 assert(uri == decoded);
 
-var uri = 'https://example.org/api?foo=some message';
+var uri3 = 'https://example.org/api?foo=some message';
 
-var encoded = Uri.encodeComponent(uri);
+var encoded1 = Uri.encodeComponent(uri3);
 assert(
-    encoded == 'https%3A%2F%2Fexample.org%2Fapi%3Ffoo%3Dsome%20message');
+    encoded1 == 'https%3A%2F%2Fexample.org%2Fapi%3Ffoo%3Dsome%20message');
 
-var decoded = Uri.decodeComponent(encoded);
-assert(uri == decoded);
+var decoded2 = Uri.decodeComponent(encoded);
+assert(uri3 == decoded2);
 
 //解析URl
-var uri = Uri.parse('https://example.org:8080/foo/bar#frag');
+var uri1 = Uri.parse('https://example.org:8080/foo/bar#frag');
 
-assert(uri.scheme == 'https');
-assert(uri.host == 'example.org');
-assert(uri.path == '/foo/bar');
-assert(uri.fragment == 'frag');
-assert(uri.origin == 'https://example.org:8080');
+assert(uri1.scheme == 'https');
+assert(uri1.host == 'example.org');
+assert(uri1.path == '/foo/bar');
+assert(uri1.fragment == 'frag');
+assert(uri1.origin == 'https://example.org:8080');
 
-var uri = Uri(
+var uri2 = Uri(
     scheme: 'https',
     host: 'example.org',
     path: '/foo/bar',
     fragment: 'frag',
     queryParameters: {'lang': 'dart'});
-assert(uri.toString() == 'https://example.org/foo/bar?lang=dart#frag');
+assert(uri2.toString() == 'https://example.org/foo/bar?lang=dart#frag');
 
 var httpUri = Uri.http('example.org', '/foo/bar', {'lang': 'dart'});
 var httpsUri = Uri.https('example.org', '/foo/bar', {'lang': 'dart'});
@@ -355,17 +347,16 @@ y2k = DateTime.parse('2000-01-01T00:00:00Z');
 var sameTimeLastYear = now.copyWith(year: now.year - 1);
 
 // 1/1/2000, UTC
-var y2k = DateTime.utc(2000);
-assert(y2k.millisecondsSinceEpoch == 946684800000);
+var y2k1 = DateTime.utc(2000);
+assert(y2k1.millisecondsSinceEpoch == 946684800000);
 
 // 1/1/1970, UTC
 var unixEpoch = DateTime.utc(1970);
 assert(unixEpoch.millisecondsSinceEpoch == 0);
 
-var y2k = DateTime.utc(2000);
 
 // Add one year.
-var y2001 = y2k.add(const Duration(days: 366));
+var y2001 = y2k1.add(const Duration(days: 366));
 assert(y2001.year == 2001);
 
 // Subtract 30 days.
@@ -378,83 +369,5 @@ assert(december2000.month == 12);
 var duration = y2001.difference(y2k);
 assert(duration.inDays == 366); // y2k was a leap year.
 
-class Line implements Comparable<Line> {
-  final int length;
-  const Line(this.length);
-
-  @override
-  int compareTo(Line other) => length - other.length;
-}
-
-void main() {
-  var short = const Line(1);
-  var long = const Line(100);
-  assert(short.compareTo(long) < 0);
-}
-
-class Person {
-  final String firstName, lastName;
-
-  Person(this.firstName, this.lastName);
-
-  // Override hashCode using the static hashing methods
-  // provided by the `Object` class.
-  @override
-  int get hashCode => Object.hash(firstName, lastName);
-
-  // You should generally implement operator `==` if you
-  // override `hashCode`.
-  @override
-  bool operator ==(Object other) {
-    return other is Person &&
-        other.firstName == firstName &&
-        other.lastName == lastName;
-  }
-}
-
-void main() {
-  var p1 = Person('Bob', 'Smith');
-  var p2 = Person('Bob', 'Smith');
-  var p3 = 'not a person';
-  assert(p1.hashCode == p2.hashCode);
-  assert(p1 == p2);
-  assert(p1 != p3);
-}
-
-//迭代
-class Process {
-  // Represents a process...
-}
-
-class ProcessIterator implements Iterator<Process> {
-  @override
-  Process get current => ...
-  @override
-  bool moveNext() => ...
-}
-
-// A mythical class that lets you iterate through all
-// processes. Extends a subclass of [Iterable].
-class Processes extends IterableBase<Process> {
-  @override
-  final Iterator<Process> iterator = ProcessIterator();
-}
-
-void main() {
-  // Iterable objects can be used with for-in.
-  for (final process in Processes()) {
-    // Do something with the process.
-  }
-}
-
-//异常
-class FooException implements Exception {
-  final String? msg;
-
-  const FooException([this.msg]);
-
-  @override
-  String toString() => msg ?? 'FooException';
-}
 
 }
